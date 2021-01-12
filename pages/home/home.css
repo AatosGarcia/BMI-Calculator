@@ -1,0 +1,10 @@
+ion-content {
+  background: linear-gradient(to top, #e1eec3 #f05053);
+}
+h2 {
+  text-align: center;
+  color: azure
+}
+p {
+  text-align: center; 
+}
