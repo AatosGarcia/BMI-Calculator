@@ -11,23 +11,22 @@ export class HomePage {
   bmi: number;
   bmiMessage: string;
 
-  constructor(public navCtrl: NavController) {}
+  calculateBMI() {
+    this.bmi = this.weight / (this.height * this.height);
+    this.bmi = parseFloat(this.bmi.toFixed(2));
 
-    calculateBMI() {
-      this.bmi = this.weight / (this.height * this.height);
-      this.bmi = parseFloat(this.bmi.toFixed(2));
-
-      if (this.bmi < 18.5) {
-        this.bmiMessage = "Underweight";
-      } else if (this.bmi > 18.5 && this.bmi< 25) {
-         this.bmiMessage = "Normal";
-      } else if (this.bmi > 25 && this.bmi < 30) {
-        this.bmiMessage = "Overweight";
-      } else {
-        this.bmiMessage = "Obese"
-      }
-
+    if (this.bmi < 18.5) {
+      this.bmiMessage = "Underweight";
+    } else if (this.bmi > 18.5 && this.bmi< 25) {
+       this.bmiMessage = "Normal";
+    } else if (this.bmi > 25 && this.bmi < 30) {
+      this.bmiMessage = "Overweight";
+    } else {
+      this.bmiMessage = "Obese"
     }
+
+  }
+  constructor(public navCtrl: NavController) {
 
   }
 
